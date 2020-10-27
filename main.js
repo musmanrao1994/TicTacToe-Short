@@ -4,14 +4,11 @@ let currentPlayer = "X",
   allInputs = document.querySelectorAll(`input`),
   hasGameEnded = false;
 
-[...allInputs].forEach((item, index) =>
-  item.addEventListener("click", () => handleInputClick(index))
-);
+[...allInputs].forEach((item, index) => item.addEventListener("click", () => handleInputClick(index)));
 
 const handleInputClick = (index) => {
   if (isNaN(board[index]) || hasGameEnded) return;
-  allInputs[index].value = currentPlayer;
-  board[index] = currentPlayer;
+  allInputs[index].value = board[index] = currentPlayer;
   (((isThereWinner(board) && (resultDiv.innerHTML = `${currentPlayer} has won!`)) || (isTie(board) && (resultDiv.innerHTML = `It is a tie!`))) && (hasGameEnded = true));
   currentPlayer = currentPlayer === "X" ? "O" : "X"
   if (currentPlayer === "O") AITurn(board);
