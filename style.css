@@ -1,25 +1,21 @@
-h1 {
-  font-size: 36px;
-  margin: 0 auto;
-  max-width: 900px;
-  text-align: center;
-  width: 90%;
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-#container input {
-  border: 1px solid black;
-  box-sizing: border-box;
-  display: inline-block;
-  height: 128px;
-  line-height: 128px;
-  margin: 2px 0px;
-  max-width: 128px;
-  vertical-align: middle;
-  width: 30%;
-  cursor: pointer;
-}
-
-#container {
+section {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
   width: 441px;
-  margin: auto;
+}
+
+section input {
+  width: 128px;
+  height: 128px;
+  margin: 2px;
+  border: 1px solid black;
+  cursor: pointer;
+  font-size: 36px;
 }
